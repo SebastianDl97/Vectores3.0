@@ -119,5 +119,23 @@ namespace EjerciciosVectores
 
             Console.WriteLine("el promedio es {0}: ", suma/x.Length);
         }
+        public static void vectordiezelementos()
+        {
+            int[] x = new int[10];
+            int num; 
+            double suma = 0;
+            
+                for (int i = 0; i < x.Length; i++)
+                {
+                do
+                {
+                    
+                    Console.WriteLine(" ingrese un numero");
+                    i = int.Parse(Console.ReadLine());
+                   
+                }
+                while (i <= 1000);
+            }
+        }
     }
 }
