@@ -91,6 +91,7 @@ namespace EjerciciosVectores
             Console.ReadKey();
             //Console.WriteLine("x1 = {1}, X2 = {0}", x1, x2);
             vectorInicializar();
+            VectorT();
             Console.ReadKey();
         }
         public static void vectorInicializar()
@@ -119,23 +120,37 @@ namespace EjerciciosVectores
 
             Console.WriteLine("el promedio es {0}: ", suma/x.Length);
         }
-        public static void vectordiezelementos()
+        public static void VectorT()
+
         {
-            int[] x = new int[10];
-            int num; 
-            double suma = 0;
-            
-                for (int i = 0; i < x.Length; i++)
+            int[] V = new int[10];
+            int mayor = V[0], menor = V[0];
+            for (int i = 0; i < V.Length; i++)
+            {
+                while (V[i] < 1 || V[i] > 1000)
                 {
-                do
-                {
-                    
-                    Console.WriteLine(" ingrese un numero");
-                    i = int.Parse(Console.ReadLine());
-                   
+                    Console.WriteLine("Ingrese valor {0} del vector", i + 1);
+                    V[i] = Int32.Parse(Console.ReadLine());
                 }
-                while (i <= 1000);
             }
+            for (int i = 0; i < V.Length; i++)
+            {
+                if (V[i] > mayor)
+                {
+                    mayor = V[i];
+                }
+            }
+            menor = mayor;
+            for (int i = 0; i < V.Length; i++)
+            {
+                if (V[i] < menor)
+                {
+                    menor = V[i];
+                }
+            }
+            Console.WriteLine("El elemento mayor es: " + mayor);
+            Console.WriteLine("El elemento menor es: " + menor);
         }
+
     }
 }
