@@ -127,11 +127,19 @@ namespace EjerciciosVectores
             int mayor = V[0], menor = V[0];
             for (int i = 0; i < V.Length; i++)
             {
-                while (V[i] < 1 || V[i] > 1000)
+                do
                 {
-                    Console.WriteLine("Ingrese valor {0} del vector", i + 1);
+                    Console.WriteLine("Ingrese valor  del vector");
                     V[i] = Int32.Parse(Console.ReadLine());
+
+                    if (V[i] < 1 || V[i] > 1000)
+                    {
+                        Console.WriteLine("Error, elnumero exede los el valor 1000 ingrese otro valor menor");
+                        Console.ReadLine();
+                    }
+                    
                 }
+                while (!(V[i] < 1 || V[i] > 1000));
             }
             for (int i = 0; i < V.Length; i++)
             {
